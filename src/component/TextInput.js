@@ -21,7 +21,7 @@ const TextInput = () => {
   const [password, setPassword] = useState({value:'',password:''});
 
   const submit = () => {
-    Alert.alert(email , password,inputText)
+    Alert.alert(email , password)
   }
   return (
     <View style={styles.container}>
