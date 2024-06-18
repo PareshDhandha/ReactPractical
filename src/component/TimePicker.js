@@ -40,7 +40,7 @@ const TimePicker = () => {
   
   return (
     <View>
-      <Text style={{ fontSize: hp(2), marginBottom: 10, fontFamily: "bold" }}>
+      <Text style={{ fontSize: hp(2), marginBottom: 10, fontWeight: "bold" }}>
         Time
       </Text>
       {showPicker && (

@@ -29,7 +29,7 @@ const DatePicker = () => {
   }
   return (
     <View>
-        <Text style = {{fontSize: hp(2),marginBottom:10,fontFamily:'bold'}}>Date Of Birth</Text>
+        <Text style = {{fontSize: hp(2),marginBottom:10,fontWeight:'bold'}}>Date Of Birth</Text>
       {showPicker && (
         <DateTimePicker 
         mode="date"

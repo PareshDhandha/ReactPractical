@@ -19,7 +19,7 @@ const Profile = () => {
       return <Text>No access Internal Storage</Text>;
     }
 
-    let result = await ImagePicker.launchImageLibraryAsync({
+    const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4.3],
@@ -45,12 +45,11 @@ const Profile = () => {
     if (!result.canceled) {
       setImage(result.assets[0].uri);
       console.log("uri", result.assets[0].uri);
-      photo(image);
     }
   };
   return (
     <View style={styles.profile}>
-      <TouchableOpacity onPress={pickImage}>
+      <TouchableOpacity onPress={() => pickImage()}>
         <Image source={image ? { uri: image } : User} style={styles.image} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => takePicture()}>
