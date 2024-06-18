@@ -12,9 +12,9 @@ const Battery = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={styles.back}
         >
-          <Arrow name="keyboard-arrow-left" size={30} />
+          <Arrow name="keyboard-arrow-left" size={35} />
         </TouchableOpacity>
-        <Text style={{ fontSize: 20, padding: 5,marginTop:15 }}>Battery</Text>
+        <Text style={{ fontSize: 20,marginTop:23,marginLeft:20,fontWeight:'bold' }}>Battery</Text>
       </View>
       <View style={styles.battery}>
         <Text

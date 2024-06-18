@@ -8,9 +8,9 @@ const About = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.back}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Arrow name="keyboard-arrow-left" size={30} />
+          <Arrow name="keyboard-arrow-left" size={35} />
         </TouchableOpacity>
-        <Text style={{ fontSize: 20, marginLeft: 10 }}>About</Text>
+        <Text style={{ fontSize: 20, marginLeft: 20 ,marginTop:4,fontWeight:'bold'}}>About</Text>
       </View>
       <View style = {{marginVertical:30}}>
         <View style={styles.info}>
