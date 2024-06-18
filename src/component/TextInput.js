@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
     padding:12,
     backgroundColor: theme.colors.onSurfaceDisabled,
     borderColor: theme.colors.onSurfaceDisabled,
-    marginVertical:40
+    marginVertical:hp(5)
   }
 });

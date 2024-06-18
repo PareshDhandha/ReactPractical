@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import React, { useState } from "react";
 import Home from "react-native-vector-icons/MaterialCommunityIcons";
 import {
   widthPercentageToDP as dp,
@@ -7,16 +7,16 @@ import {
 } from "react-native-responsive-screen";
 import { theme } from "../core/themes";
 import * as ImagePicker from "expo-image-picker";
+import User from "./assets/user.png";
 
 const Profile = () => {
   const [image, setImage] = useState(null);
-  
-
 
   const pickImage = async () => {
-    const gallaryStatus = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if(gallaryStatus.granted === false){
-      return<Text>No access Internal Storage</Text>
+    const gallaryStatus =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (gallaryStatus.granted === false) {
+      return <Text>No access Internal Storage</Text>;
     }
 
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -28,26 +28,34 @@ const Profile = () => {
     console.log("result", result);
 
     if (!result.canceled) {
-      setImage(result.uri);
+      setImage(result.assets[0].uri);
+      console.log("uri..", result.assets[0].uri);
     }
+  };
+  const takePicture = async () => {
+    const cameraPermission = await ImagePicker.requestCameraPermissionsAsync();
+    if (cameraPermission.granted === false) {
+      alert("permission denied");
+      return;
+    }
+    const result = await ImagePicker.launchCameraAsync();
 
-    if(hasGallaryPermission === false){
-      return <Text>No access Internal Storage</Text>
+    console.log("result..", result);
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+      console.log("uri", result.assets[0].uri);
+      photo(image);
     }
   };
   return (
     <View style={styles.profile}>
-      
       <TouchableOpacity onPress={pickImage}>
-        {/* {image && 
-        <Image source = {{}} />
-        } */}
-        <Home name="account" size={hp(14)} style={styles.account} />
+        <Image source={image ? { uri: image } : User} style={styles.image} />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => takePicture()}>
         <Home name="camera-outline" size={hp(3)} style={styles.camera} />
       </TouchableOpacity>
-      {image && <Image source={{ uri: image }} />}
     </View>
   );
 };
@@ -66,8 +74,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 50,
     color: "#fff",
-    right: 30,
-    top: 50,
+    right: 35,
+    top: 45,
   },
   account: {
     shadowColor: "black",
@@ -80,4 +88,16 @@ const styles = StyleSheet.create({
     color: "#fff",
     backgroundColor: theme.colors.onSurfaceDisabled,
   },
+  image: {
+    width: dp(40),
+    height: hp(20),
+    borderRadius: 75,
+    marginLeft: 40,
+    marginTop: 30,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  
 });

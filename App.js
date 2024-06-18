@@ -1,11 +1,9 @@
 import { StyleSheet, Text, View , StatusBar} from 'react-native';
 import StackNavigation from './src/navigation/StackNavigation';
 
-let statusBar = StatusBar.currentHeight;
 export default function App() {
   return (
     <View style = {styles.container}>
-        {/* <TabNavigation/> */}
         <StackNavigation />
     </View>
 

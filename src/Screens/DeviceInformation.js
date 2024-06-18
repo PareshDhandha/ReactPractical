@@ -13,10 +13,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import Popup from "../component/Popup";
-import CameraCapcture from "../component/Camera";
-// import {version} from '../package.json';
-// const pkg = require('../package.json')
 
 const DeviceInformation = () => {
   const navigation = useNavigation();
@@ -41,14 +37,13 @@ const DeviceInformation = () => {
           style={styles.about}
         >
           <Battery name="battery" size={hp(3)} style={styles.icon} />
-          <Text style={{ fontSize: hp(2.2), marginLeft: 30, marginTop: 5}}>
+          <Text style={{ fontSize: hp(2.2), marginLeft: 30, marginTop: 5 }}>
             Battery
           </Text>
           <Arrow name="arrow-forward-ios" size={hp(2.2)} style={styles.arrow} />
         </TouchableOpacity>
       </View>
       {/* <View><Text>Version{appVersion}</Text></View> */}
-      {/* <CameraCapcture /> */}
     </View>
   );
 };

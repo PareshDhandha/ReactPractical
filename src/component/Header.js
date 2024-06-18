@@ -4,6 +4,7 @@ import Home from "react-native-vector-icons/MaterialCommunityIcons";
 import { StatusBar } from "expo-status-bar";
 import { Modal, Provider } from "react-native-paper";
 import {Popup} from "./Popup";
+import { widthPercentageToDP as wp , heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
       <StatusBar style="light" />
       <View style={styles.dashboard}>
         <Text style={styles.text}>Deshboard</Text>
-        <View style={{ display: "flex", flexDirection: "row", marginLeft: 80 }}>
+        <View style={{ display: "flex", flexDirection: "row", marginLeft: hp(10) }}>
           <Home
             name="bell-outline"
             size={24}
@@ -33,11 +34,11 @@ const styles = StyleSheet.create({
     height: 100,
   },
   text: {
-    fontSize: 22,
+    fontSize: hp(2.6),
     fontWeight: "bold",
     alignItems: "center",
     textAlign: "center",
-    marginLeft: 130,
+    marginLeft: hp(18),
     color: "#fff",
   },
   dashboard: {

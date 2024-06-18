@@ -17,7 +17,7 @@ const HomeScreen = () => {
       <View>
         <Text
           style={{
-            fontSize: 22,
+            fontSize: hp(2.3),
             margin: 20,
             fontWeight: "bold",
             color: "#3E2F84",
@@ -27,10 +27,10 @@ const HomeScreen = () => {
         </Text>
         <View style={styles.card}>
           <View style={{ padding: 5 }}>
-            <Text style={{ fontSize: hp(2), color: "#875692" }}>
+            <Text style={{ fontSize: wp(4.2), color: "#875692" }}>
               Dr.Marta Juarez
             </Text>
-            <Text style={{ fontSize: hp(2), color: "#875692" }}>
+            <Text style={{ fontSize: wp(4.2), color: "#875692" }}>
               Dr.Hans Gerhoff
             </Text>
           </View>
@@ -39,18 +39,18 @@ const HomeScreen = () => {
               display: "flex",
               flexDirection: "row",
               position: "absolute",
-              right: 10,
-              top: 65,
+              right: wp(4),
+              top: hp(9),
             }}
           >
             <Home
               name="stethoscope"
-              size={hp(8)}
+              size={wp(16)}
               color="#875692"
-              style={{ margin: 10 }}
+              style={{ margin: hp(1 ) }}
             />
             <Text
-              style={{ fontSize: hp(8), color: "#875692", fontWeight: "bold" }}
+              style={{ fontSize: hp(8.2), color: "#875692", fontWeight: "bold" }}
             >
               2
             </Text>
@@ -60,7 +60,7 @@ const HomeScreen = () => {
       <View>
         <Text
           style={{
-            fontSize: 22,
+            fontSize: hp(2.3),
             margin: 20,
             fontWeight: "bold",
             color: "#3E2F84",
@@ -70,16 +70,16 @@ const HomeScreen = () => {
         </Text>
         <View style={styles.card}>
           <View style={{ padding: 5 }}>
-            <Text style={{ fontSize: hp(2), color: "#875692" }}>
+            <Text style={{ fontSize: wp(4.2), color: "#875692" }}>
               Blood tests.pdf
             </Text>
-            <Text style={{ fontSize: hp(2), color: "#875692" }}>
+            <Text style={{ fontSize: wp(4.2), color: "#875692" }}>
               Cardiology results.pdf
             </Text>
-            <Text style={{ fontSize: hp(2), color: "#875692" }}>
+            <Text style={{ fontSize: wp(4.2), color: "#875692" }}>
               Blood tests 20-02-2020.pdf
             </Text>
-            <Text style={{ fontSize: hp(2), color: "#875692" }}>
+            <Text style={{ fontSize: wp(4.2), color: "#875692" }}>
               MRI results.pdf
             </Text>
           </View>
@@ -88,18 +88,18 @@ const HomeScreen = () => {
               display: "flex",
               flexDirection: "row",
               position: "absolute",
-              right: 10,
-              top: 70,
+              right: wp(4),
+              top: hp(9),
             }}
           >
             <Home
               name="file-document-multiple"
-              size={hp(7)}
+              size={wp(15)}
               color="#875692"
-              style={{ margin: 10 }}
+              style={{ margin: wp(1) }}
             />
             <Text
-              style={{ fontSize: hp(8), color: "#875692", fontWeight: "bold" }}
+              style={{ fontSize: hp(8.2), color: "#875692", fontWeight: "bold" }}
             >
               7
             </Text>
@@ -118,8 +118,8 @@ const HomeScreen = () => {
         <View style={styles.box}>
           <View
             style={{
-              width: 70,
-              height: 70,
+              width: wp(16.4),
+              height: hp(8),
               alignSelf: "center",
               backgroundColor: "#875692",
               borderRadius: 50,
@@ -132,11 +132,11 @@ const HomeScreen = () => {
             color="#fff"
             style={
               {
-                margin:10
+                margin:9
               }
             }
           />
-          <Text style={{ fontSize: hp(2.1), fontWeight: "bold", marginTop: 8,color:'#875692' }}>
+          <Text style={{ fontSize: hp(2), fontWeight: "bold", marginTop: 8,color:'#875692' }}>
             Schedule
           </Text>
           </View>
@@ -144,17 +144,17 @@ const HomeScreen = () => {
         <View style={styles.box}>
         <View
             style={{
-              width: 70,
-              height: 70,
+              width: wp(16.2),
+              height: hp(8),
               alignSelf: "center",
               backgroundColor: "#875692",
-              borderRadius: 50,
+              borderRadius: 75,
               marginTop:40,
             }}
           >
           <Call
             name="call"
-            size={hp(5)}
+            size={hp(4.4)}
             color="#fff"
             style={{
               margin:15,
@@ -162,10 +162,10 @@ const HomeScreen = () => {
           />
           <Text
             style={{
-              fontSize: hp(2.2),
+              fontSize: hp(2),
               fontWeight: "bold",
-              marginTop: 5,
-              marginLeft: 20,
+              marginTop: 7,
+              marginLeft: 17,
               color:'#875692'
             }}
           >
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     // borderTopWidth: 0.3,
     marginLeft: 20,
     marginRight: 20,
-    height: 150,
+    height: hp(20),
     borderRadius: 10,
     shadowColor: "black",
     backgroundColor: "#fff",
@@ -205,8 +205,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 3,
-    width: 170,
-    height: 170,
+    width: wp(42),
+    height: hp(22),
     borderRadius: 10,
   },
 });
